@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">
+        This is Original Text
+    </div>
+    <button onclick="changeText()"> Change  the text</button>
+
+    <div >
+        This is <span class="highlight">Highlighted Text</span>
+    </div>
+    <div >
+        This is <span class="highlight"> Second Highlighted Text</span>
+    </div>
+    <button onclick="highlightText()">Highlighted text</button>
+
+    <p>This is first paragraph</p>
+    <p>This is second paragraph</p>
+    <p>This is third paragraph</p>
+    <button ondblclick="changeContent()"> Chnage the para</button>
+
+    <div class="box">First box</div>
+    <div class="box">second Box</div>
+    <button onmouseover="changeBox()"> Chnage the box</button>
+    <button onclick="changeAllBox()"> Chnage all  box</button>
+    <script>
+        function changeText(){
+        const element = document.getElementById("myDiv");
+        element.textContent ="This is the modified text";
+        element.style.color="white"
+        element.style.background="Blue"     
+    }
+    function highlightText(){
+        const highlightingtext= document.getElementsByClassName("highlight");
+        highlightingtext[0].style.color="pink"
+        highlightingtext[0].style.background="purple" 
+        highlightingtext[1].style.color="yellow"
+        highlightingtext[1].style.background="red"    
+    }    
+    function changeContent(){
+        const changePara= document.getElementsByTagName("p");
+        changePara[0].textContent ="This is modified para 1";
+        changePara[0].style.color="red"
+        changePara[1].textContent ="This is modified para 2";
+        changePara[1].style.color="blue"
+        changePara[2].textContent ="This is modified para 3";
+        changePara[2].style.color="green"
+    }
+    function changeBox(){
+        const firstBox =document.querySelector(".box");
+        firstBox.style.border="2px solid brown";
+        firstBox.style.padding="30px";
+
+    }
+
+    function changeAllBox(){
+        const allBox =document.querySelectorAll(".box");
+        allBox[0].style.border="spx solid brown";
+        allBox[0].style.padding="30px";
+        allBox[1].style.border="2px solid blue";
+        allBox[1].style.padding="20px"
+
+    }
+    </script>
+    </body>
+</html>
